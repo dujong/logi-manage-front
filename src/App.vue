@@ -9,7 +9,9 @@ import TheView from '@/layouts/TheView.vue';
 		<TheHeader />
 		<div class="layout-body">
 			<TheNavigation />
-			<TheView />
+			<div class="main-content">
+				<TheView />
+			</div>
 		</div>
 	</div>
 </template>
@@ -28,12 +30,14 @@ import TheView from '@/layouts/TheView.vue';
 }
 
 .layout-body > :first-child {
-	width: 250px; /* Navigation의 너비 고정 */
-	flex-shrink: 0; /* 사이즈 줄어들지 않게 */
+	width: 250px; /* 사이드바 너비 고정 */
+	flex-shrink: 0; /* 사이드바는 사이즈 줄어들지 않음 */
 }
 
-.layout-body > :last-child {
-	flex: 1; /* View는 나머지 공간 전부 차지 */
+.main-content {
+	flex: 1; /* 메인 콘텐츠는 나머지 공간 차지 */
+	margin-left: 250px; /* 사이드바 너비만큼 왼쪽 여백 추가 */
+	padding: 20px;
 	overflow-y: auto;
 }
 </style>

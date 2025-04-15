@@ -1,7 +1,7 @@
 <template>
 	<main>
-		<div class="container py-4">
-			<RouterView></RouterView>
+		<div class="py-4 main-content">
+			<RouterView />
 		</div>
 	</main>
 </template>
@@ -10,6 +10,10 @@
 
 <style scoped>
 .main-view {
-	background-color: #cbbebe;
+	background-color: #f8f9fa; /* 기본 배경색 */
+}
+
+.main-content {
+	margin: 5px;
 }
 </style>
