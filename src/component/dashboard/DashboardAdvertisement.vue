@@ -1,7 +1,11 @@
 <template>
 	<div class="ad-box">
-		<p class="ad-title">Advertise With Us</p>
-		<p class="ad-description">Boost your business with targeted ads!</p>
+		<p class="ad-title">Increase your sales</p>
+		<p class="ad-description">
+			Discover the Proven Methods to Skyrocket Your Sales! Unleash the Potential
+			of Your Business and Achieve Remarkable Growth. Whether you're a seasoned
+			entrepreneur or just starting out.
+		</p>
 		<button class="ad-button">Learn More</button>
 	</div>
 </template>
@@ -10,7 +14,11 @@
 
 <style scoped>
 .ad-box {
-	background-color: #0dc313;
+	background: linear-gradient(
+		135deg,
+		#00c6ff,
+		#0072ff
+	); /* Gradient Background */
 	padding: 20px;
 	border-radius: 12px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -23,25 +31,29 @@
 }
 
 .ad-title {
-	font-size: 18px;
-	font-weight: bold;
-	color: #333;
+	font-size: 28px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
 }
 
 .ad-description {
-	font-size: 14px;
-	color: #555;
-	margin: 10px 0;
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+	font-weight: 300;
 }
 
 .ad-button {
 	background-color: #0066cc;
 	color: white;
 	border: none;
-	padding: 10px;
-	font-size: 14px;
-	border-radius: 5px;
+	padding: 12px 20px;
+	font-size: 16px;
+	border-radius: 8px;
 	cursor: pointer;
+	align-self: flex-start;
+	transition: background-color 0.3s ease;
 }
 
 .ad-button:hover {
