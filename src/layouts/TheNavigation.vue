@@ -2,29 +2,22 @@
 	<div class="sidenav">
 		<div class="menu-section">
 			<p class="section-title">GENERAL</p>
-			<div class="menu-item">
+			<div class="menu-item" @click="dashboardPage">
 				<i class="bi bi-house-door"></i>
 				<span>Dashboard</span>
 			</div>
 
-			<div class="menu-item has-submenu" @click="toggleSubmenu('productMenu')">
+			<div class="menu-item has-submenu" @click="productsPage">
 				<i class="bi bi-box"></i>
-				<span>Product (119)</span>
-				<i
-					:class="productMenuOpen ? 'bi bi-chevron-down' : 'bi bi-chevron-up'"
-					class="submenu-icon"
-				></i>
+				<span>Product</span>
 			</div>
-			<div v-if="productMenuOpen" class="submenu">
-				<div class="submenu-item">Sneakers</div>
-				<div class="submenu-item">Jacket</div>
-				<div class="submenu-item">T-Shirt</div>
-				<div class="submenu-item">Bag</div>
-			</div>
-
-			<div class="menu-item">
+			<div class="menu-item" @click="inventoryPage">
 				<i class="bi bi-file-earmark-text"></i>
-				<span>Transaction (441)</span>
+				<span>Inventory</span>
+			</div>
+			<div class="menu-item">
+				<i class="bi bi-person"></i>
+				<span>Shipment</span>
 			</div>
 			<div class="menu-item">
 				<i class="bi bi-person"></i>
@@ -51,14 +44,26 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-const productMenuOpen = ref(false);
-
-const toggleSubmenu = menu => {
-	if (menu === 'productMenu') {
-		productMenuOpen.value = !productMenuOpen.value;
-	}
+const router = useRouter();
+//대시보드 페이지 이동
+const dashboardPage = () => {
+	router.push({
+		name: 'Dashboard',
+	});
+};
+//제품 리스트 페이지 이동
+const productsPage = () => {
+	router.push({
+		name: 'Products',
+	});
+};
+//인벤토리 리스트 페이지 이동
+const inventoryPage = () => {
+	router.push({
+		name: 'Inventories',
+	});
 };
 </script>
 
@@ -111,22 +116,5 @@ const toggleSubmenu = menu => {
 	flex-direction: column;
 	border-left: 2px solid #ddd; /* 세로 선 */
 	margin-left: 20px; /* 선을 좀 더 떨어뜨려서 추가 */
-}
-
-/* 서브메뉴 항목에 가로줄 추가 */
-.submenu-item {
-	padding: 8px 0;
-	font-size: 14px;
-	color: #495057;
-	cursor: pointer;
-	border-bottom: 1px solid #ddd; /* 각 서브메뉴 항목 아래에 가로 선 추가 */
-}
-
-.submenu-item:hover {
-	background-color: #e9ecef;
-}
-
-.submenu-icon {
-	margin-left: auto;
 }
 </style>

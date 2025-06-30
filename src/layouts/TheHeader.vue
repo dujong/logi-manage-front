@@ -82,8 +82,8 @@
 }
 
 .custom-btn {
-	height: 30px; /* 버튼의 높이를 30px로 설정 */
-	padding: 2px 8px; /* 위 아래 패딩을 줄여서 버튼 크기를 더 작게 */
-	font-size: 14px; /* 아이콘의 크기나 텍스트 크기 조정 */
+	height: 30px;
+	padding: 2px 8px;
+	font-size: 14px;
 }
 </style>

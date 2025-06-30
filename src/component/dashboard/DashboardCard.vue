@@ -11,7 +11,7 @@
 
 				<!-- 퍼센트 (우측) -->
 				<div class="percentage-container">
-					<div class="percentage" :class="percentageClass">
+					<div class="percentage">
 						<!-- 상승/하락 아이콘 -->
 						<img
 							v-if="isPositive"
@@ -29,10 +29,12 @@
 							height="16"
 							class="negative-icon"
 						/>
-						<span class="percentage-text">{{ props.percentage }}%</span>
+						<span class="percentage-text" :class="percentClass"
+							>{{ props.percentage }}%</span
+						>
 					</div>
 					<!-- "From last week" (두 번째 행) -->
-					<p class="from-last-week">From last week</p>
+					<p class="from-last-week" :class="percentClass">From last week</p>
 				</div>
 			</div>
 		</div>
@@ -58,14 +60,13 @@ const cardClass = computed(() => {
 	return `card-${props.percentClass}`;
 });
 
-// `percentageClass`를 통해서 positive/negative 클래스를 적용
-const percentageClass = computed(() => {
-	return props.percentClass === 'positive' ? 'positive' : 'negative';
-});
-
 // 상승/하락 여부를 판단
 const isPositive = computed(() => {
 	return props.percentClass === 'positive';
+});
+
+const percentClass = computed(() => {
+	return props.percentClass === 'positive' ? 'positive' : 'negative';
 });
 </script>
 
@@ -129,14 +130,13 @@ const isPositive = computed(() => {
 .card-body .percentage-text {
 	font-weight: bold;
 	font-size: 16px;
-	color: #0066cc;
 }
 
-.card-body .percentage .positive {
+.card-body .positive {
 	color: green;
 }
 
-.card-body .percentage.negative {
+.card-body .negative {
 	color: red;
 }
 
@@ -152,15 +152,6 @@ const isPositive = computed(() => {
 /* SVG 아이콘 스타일 */
 .card-body img {
 	margin-right: 5px;
-}
-
-/* 색상 설정 */
-.positive-icon {
-	fill: green;
-}
-
-.negative-icon {
-	fill: red;
 }
 
 /* "From last week" 스타일 */

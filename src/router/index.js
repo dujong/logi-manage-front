@@ -1,10 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import DashboardView from '@/views/DashboardView.vue';
+import DashboardView from '@/views/dashboard/DashboardView.vue';
 
 const routes = [
+	/**
+	 * navigation
+	 */
 	{
-		path: '/',
+		path: '/dashboard',
 		name: 'Dashboard',
 		component: DashboardView,
 	},
