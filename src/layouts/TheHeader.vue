@@ -20,7 +20,9 @@
 					<span
 						class="input-group-text bg-white border-start-0 rounded-end-pill"
 					>
-						<i class="fas fa-search text-muted"></i>
+						<button class="btn p-1 custom-btn">
+							<i class="bi bi-search"></i>
+						</button>
 					</span>
 				</div>
 			</div>
@@ -72,10 +74,16 @@
 
 <script setup></script>
 
-<style>
+<style scoped>
 .icon-style {
 	width: 24px;
 	height: 24px;
 	cursor: pointer;
+}
+
+.custom-btn {
+	height: 30px;
+	padding: 2px 8px;
+	font-size: 14px;
 }
 </style>
